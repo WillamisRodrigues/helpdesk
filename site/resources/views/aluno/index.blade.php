@@ -1,6 +1,7 @@
 @extends('template.layout.app-admin')
     @section('titulo','Aluno')
-    @section('conteudo')
+	@section('conteudo')
+	@section('aluno','active')
     @include('template.layout.header')
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		@include('template.menu.sidebar')
