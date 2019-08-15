@@ -11,6 +11,9 @@
 |
 */
 
+Route::resource('aluno', 'AlunoController');
+
+
 Route::get('/', function () {
     return view('auth/login');
 });
@@ -35,9 +38,7 @@ Route::get('/professor', function () {
     return view('professor.index');
 });
 
-Route::get('/aluno', function () {
-    return view('aluno.index');
-});
+
 
 Route::get('/categorias', function () {
     return view('categorias.index');
