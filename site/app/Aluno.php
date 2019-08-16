@@ -8,5 +8,7 @@ class Aluno extends Model
 {
     protected $fillable = ['nome','email','senha','nivel','cod_unidade','matricula' ,'id_turma_unifp'];
 
+    protected $primaryKey = 'id_cliente';
+
     protected $table ="clientes";
 }

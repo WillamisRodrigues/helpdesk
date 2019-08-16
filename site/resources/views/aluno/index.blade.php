@@ -56,7 +56,7 @@
                                 @else
                                 <td>Inativo</td>
                                 @endif
-								<td><a href="/editar_aluno" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a></td>
+								<td><a href="{{ route('aluno.edit',[$aluno->id_cliente]) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a></td>
                                 </tr>
                                 @endforeach
 							</tbody>

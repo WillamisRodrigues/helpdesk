@@ -60,7 +60,7 @@ class AlunoController extends Controller
      */
     public function edit(Aluno $aluno)
     {
-        //
+        return view('aluno.edit', compact('aluno', $aluno));
     }
 
     /**
@@ -72,7 +72,16 @@ class AlunoController extends Controller
      */
     public function update(Request $request, Aluno $aluno)
     {
-        //
+        $request->validate([
+            'nome'=>'required',
+            'email'=>'required',
+
+        ]);
+
+        $aluno->update($request->all());
+        $aluno->save();
+        $aluno->session()->flash('message', 'Alterado com sucesso');
+        return redirect('aluno');
     }
 
     /**

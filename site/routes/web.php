@@ -11,20 +11,7 @@
 |
 */
 
-<<<<<<< HEAD
-Route::resource('aluno', 'AlunoController');
-Route::resource('professor','ProfessorController');
-=======
->>>>>>> 7e62d0e58d93286610b333c111534293d277f332
 
-Route::get('/editar_aluno', function () {
-    return view('aluno.edit');
-});
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7e62d0e58d93286610b333c111534293d277f332
 Route::get('/', function () {
     return view('auth/login');
 });
