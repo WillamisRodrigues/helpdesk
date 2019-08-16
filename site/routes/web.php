@@ -12,7 +12,7 @@
 */
 
 Route::resource('aluno', 'AlunoController');
-
+Route::resource('professor', 'ProfessorController');
 
 Route::get('/', function () {
     return view('auth/login');
@@ -33,11 +33,6 @@ Route::get('/chamados', function () {
 Route::get('/unidades', function () {
     return view('unidades.index');
 });
-
-Route::get('/professor', function () {
-    return view('professor.index');
-});
-
 
 
 Route::get('/categorias', function () {
