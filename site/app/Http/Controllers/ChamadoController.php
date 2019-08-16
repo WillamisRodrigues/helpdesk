@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Professor;
-use DB;
 use Illuminate\Http\Request;
 
-class ProfessorController extends Controller
+class ChamadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class ProfessorController extends Controller
      */
     public function index()
     {
-
-        $professores = DB::table('clientes')->where('nivel', 1)->get();
-        return view('professor.index', compact('professores'));
+        return view('chamados.index');
     }
 
     /**
@@ -44,10 +40,10 @@ class ProfessorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Professor $professor)
+    public function show($id)
     {
         //
     }
@@ -55,10 +51,10 @@ class ProfessorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Professor $professor)
+    public function edit($id)
     {
         //
     }
@@ -67,10 +63,10 @@ class ProfessorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Professor $professor)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,10 +74,10 @@ class ProfessorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Professor $professor)
+    public function destroy($id)
     {
         //
     }

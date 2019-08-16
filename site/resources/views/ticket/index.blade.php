@@ -54,14 +54,6 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-md-2 control-label">Prioridade:</label>
-									<div class="col-md-6">
-										<select class="form-control">
-											<option>-- Selecione --</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
 									<label class="col-md-2 control-label"></label>
 									<div class="col-md-6">
 										<button class="btn btn-success">Lançar Chamado </button>
