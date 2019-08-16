@@ -42,9 +42,13 @@
 								<tr>
                                 <td>{{$professor->nome}}</td>
 								<td>{{$professor->email}}</td>
-								<td>{{$professor->nivel}}</td>
+								<td>Professor</td>
                                 <td>{{$professor->senha}}</td>
-                                <td>{{$professor->status}}</td>
+                                @if($professor->status == 0)
+                                <td>Ativo</td>
+                                @else
+                                <td>Inativo</td>
+                                @endif
                                 </tr>
                                 @endforeach
 							</tbody>
