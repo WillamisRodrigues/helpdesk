@@ -30,6 +30,14 @@ Route::get('/ticket', function () {
     return view('ticket.index');
 });
 
+Route::get('/adicionar_professor', function () {
+    return view('professor.create');
+});
+
+Route::get('/adicionar_aluno', function () {
+    return view('aluno.create');
+});
+
 Route::get('/arquivados', function () {
     return view('arquivados.index');
 });
