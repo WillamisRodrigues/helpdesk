@@ -17,9 +17,9 @@
 			</ol>
 		</div><!--/.row-->
 		<br>
-			<button class="btn btn-success pull-right">
+			<a href="/adicionar_professor" class="btn btn-success pull-right">
 			<i class="fa fa-graduation-cap"></i>
-			Adicionar Professor</button>
+			Adicionar Professor</a>
 			<div style="height:55px;"></div>
 			<div class="row">
 				<div class="col-md-12">
