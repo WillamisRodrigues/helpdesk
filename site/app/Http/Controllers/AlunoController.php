@@ -38,7 +38,12 @@ class AlunoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome'=>'required',
+            'email'=>'required',
+        ]);
+
+        Aluno::create($request->all());
     }
 
     /**
@@ -80,7 +85,7 @@ class AlunoController extends Controller
 
         $aluno->update($request->all());
         $aluno->save();
-        $aluno->session()->flash('message', 'Alterado com sucesso');
+        // $aluno->session()->flash('message', 'Alterado com sucesso');
         return redirect('aluno');
     }
 
