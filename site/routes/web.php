@@ -12,14 +12,12 @@
 */
 
 Route::resource('aluno', 'AlunoController');
+Route::resource('professor','ProfessorController');
+
 Route::get('/editar_aluno', function () {
     return view('aluno.edit');
 });
-Route::get('/editar_professor', function () {
-    return view('professor.edit');
-});
 
-Route::resource('professor', 'ProfessorController');
 
 Route::get('/', function () {
     return view('auth/login');

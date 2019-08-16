@@ -60,7 +60,7 @@ class ProfessorController extends Controller
      */
     public function edit(Professor $professor)
     {
-        //
+        return view('professor.edit', compact('professor', $professor));
     }
 
     /**
@@ -72,7 +72,17 @@ class ProfessorController extends Controller
      */
     public function update(Request $request, Professor $professor)
     {
-        //
+        $request->validate([
+            'nome'=>'required',
+            'email'=>'required',
+
+        ]);
+
+        $professor->update($request->all());
+        $professor->save();
+        $request->session()->flash('message', 'Alterado com sucesso');
+        return redirect('professor');
+
     }
 
     /**
