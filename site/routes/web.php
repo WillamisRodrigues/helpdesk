@@ -11,41 +11,36 @@
 |
 */
 
+<<<<<<< HEAD
 Route::resource('aluno', 'AlunoController');
 Route::resource('professor','ProfessorController');
+=======
+>>>>>>> 7e62d0e58d93286610b333c111534293d277f332
 
 Route::get('/editar_aluno', function () {
     return view('aluno.edit');
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7e62d0e58d93286610b333c111534293d277f332
 Route::get('/', function () {
     return view('auth/login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('home', 'HomeController');
+Route::resource('aluno', 'AlunoController');
+Route::resource('professor', 'ProfessorController');
+Route::resource('unidades', 'UnidadeController');
+Route::resource('chamados', 'ChamadoController');
+Route::resource('usuarios', 'UsuarioController');
+Route::resource('categorias', 'CategoriaController');
 
 Route::get('/ticket', function () {
     return view('ticket.index');
-});
-
-Route::get('/chamados', function () {
-    return view('chamados.index');
-});
-
-Route::get('/unidades', function () {
-    return view('unidades.index');
-});
-
-
-Route::get('/categorias', function () {
-    return view('categorias.index');
-});
-
-Route::get('/usuarios', function () {
-    return view('usuarios.index');
 });
 
 Route::get('/arquivados', function () {

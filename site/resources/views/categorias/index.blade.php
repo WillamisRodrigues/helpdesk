@@ -38,8 +38,12 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>1</td>
-									<td>System Architect</td>
+								@foreach ($categorias as $categoria)
+									<tr>
+										<td>{{$categoria->id_categoria}}</td>
+										<td>{{$categoria->nome_categoria}}</td>
+									</tr>
+								@endforeach
 								</tr>
 							</tbody>
 						</table>

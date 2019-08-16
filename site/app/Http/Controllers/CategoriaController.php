@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Professor;
-use DB;
 use Illuminate\Http\Request;
+use App\Categoria;
+use DB;
 
-class ProfessorController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Categoria $categorias)
     {
-
-        $professores = DB::table('clientes')->where('nivel', 1)->get();
-        return view('professor.index', compact('professores'));
+        $categorias = DB::table('categorias')->get();
+        return view('categorias.index', compact('categorias'));
     }
 
     /**
@@ -44,10 +43,10 @@ class ProfessorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Professor $professor)
+    public function show($id)
     {
         //
     }
@@ -55,43 +54,33 @@ class ProfessorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Professor $professor)
+    public function edit($id)
     {
-        return view('professor.edit', compact('professor', $professor));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Professor $professor)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'nome'=>'required',
-            'email'=>'required',
-
-        ]);
-
-        $professor->update($request->all());
-        $professor->save();
-        $request->session()->flash('message', 'Alterado com sucesso');
-        return redirect('professor');
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Professor  $professor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Professor $professor)
+    public function destroy($id)
     {
         //
     }
