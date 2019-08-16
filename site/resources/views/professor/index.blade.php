@@ -36,6 +36,7 @@
 									<th>Nível</th>
                                     <th>Senha</th>
                                     <th>Status</th>
+									<th>Ação</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -50,6 +51,7 @@
                                 @else
                                 <td>Inativo</td>
                                 @endif
+								<td><a href="/editar_professor" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a></td>
                                 </tr>
                                 @endforeach
 							</tbody>

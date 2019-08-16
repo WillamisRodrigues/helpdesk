@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use DB;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -12,9 +13,10 @@ class AlunoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Aluno $alunos)
     {
-        $alunos = Aluno::all();
+
+        $alunos = DB::table('clientes')->where('nivel','!=' ,1)->get();
         return view('aluno.index', compact('alunos'));
     }
 

@@ -12,6 +12,13 @@
 */
 
 Route::resource('aluno', 'AlunoController');
+Route::get('/editar_aluno', function () {
+    return view('aluno.edit');
+});
+Route::get('/editar_professor', function () {
+    return view('professor.edit');
+});
+
 Route::resource('professor', 'ProfessorController');
 
 Route::get('/', function () {

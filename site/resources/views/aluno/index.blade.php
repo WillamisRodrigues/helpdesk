@@ -1,7 +1,7 @@
 @extends('template.layout.app-admin')
-    @section('titulo','Aluno')
-	@section('conteudo')
+	@section('titulo','Alunos')
 	@section('aluno','active')
+    @section('conteudo')
     @include('template.layout.header')
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		@include('template.menu.sidebar')
@@ -13,38 +13,50 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Aluno</li>
+				<li class="active">Alunos</li>
 			</ol>
 		</div><!--/.row-->
 		<br>
 			<button class="btn btn-success pull-right">
-			<i class="fa fa-home"></i>
+			<i class="fa fa-graduation-cap"></i>
 			Adicionar Alunos</button>
 			<div style="height:55px;"></div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-user"></i>
+						<i class="fa fa-graduation-cap"></i>
 						Alunos</div>
 						<div class="panel-body">
 						<table class="display list" style="width:100%">
 							<thead>
 								<tr>
+									<th>Matricula</th>
 									<th>Nome Usuário</th>
 									<th>Email</th>
-									<th>Data Criação</th>
-									<th>Status</th>
-                                    <th>Ação</th>
+									<th>Nível</th>
+                                    <th>Status</th>
+									<th>Ação</th>
 								</tr>
 							</thead>
 							<tbody>
-                                @foreach ($alunos as $aluno)
+							@foreach ($alunos as $aluno)
 								<tr>
-									<td>{{$aluno->nome}}</td>
-									<td>System Architect</td>
-									<td>System Architect</td>
-									<td>System Architect</td>
+								<td>{{$aluno->matricula}}</td>
+                                <td>{{$aluno->nome}}</td>
+								<td>{{$aluno->email}}</td>
+								@if($aluno->nivel == 0)
+									<td>Open Class</td>
+								@else
+									<td>Design Standard </td>
+                                @endif
+
+                                @if($aluno->status == 0)
+                                <td>Ativo</td>
+                                @else
+                                <td>Inativo</td>
+                                @endif
+								<td><a href="/editar_aluno" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a></td>
                                 </tr>
                                 @endforeach
 							</tbody>
