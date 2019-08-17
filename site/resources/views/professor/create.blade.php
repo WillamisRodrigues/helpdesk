@@ -1,6 +1,6 @@
-    @extends('template.layout.app-admin')
-	@section('titulo','Novo Chamado')
-	@section('ticket','active')
+@extends('template.layout.app-admin')
+	@section('titulo','Adicionar Professor')
+	@section('professor','active')
     @section('conteudo')
     @include('template.layout.header')
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
@@ -12,8 +12,9 @@
 			<ol class="breadcrumb">
 				<li><a href="#">
 					<em class="fa fa-home"></em>
-				</a></li>
-				<li class="active">Novo Chamado</li>
+                </a></li>
+                <li class="active">Professores</li>
+				<li class="active">Adicionar Professor</li>
 			</ol>
 		</div><!--/.row-->
 		<br>
@@ -21,36 +22,36 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-book	"></i>	
-						Abertura de Chamado</div>
+						<i class="fa fa-graduation-cap"></i>	
+						Adicionar Professor</div>
 						<div class="panel-body">
 							<form class="form-horizontal row-border" action="#">
 								<div class="form-group">
-									<label class="col-md-2 control-label">Titulo do Chamado:</label>
+									<label class="col-md-2 control-label">Nome:</label>
+									<div class="col-md-6">
+										<input type="text" name="regular" class="form-control">
+									</div>
+                                </div>
+                                <div class="form-group">
+									<label class="col-md-2 control-label">Email:</label>
 									<div class="col-md-6">
 										<input type="text" name="regular" class="form-control">
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-md-2 control-label">Escola Parceira:</label>
+									<label class="col-md-2 control-label">Gêreno:</label>
 									<div class="col-md-6">
 										<select class="form-control">
-											<option>-- Selecione --</option>
+                                            <option>Masculino</option>
+                                            <option>Feminino</option>
+                                            <option>Outros</option>
 										</select>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">Categoria:</label>
+                                </div>
+                                <div class="form-group">
+									<label class="col-md-2 control-label">Telefone:</label>
 									<div class="col-md-6">
-										<select class="form-control">
-											<option>-- Selecione --</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">Observação:</label>
-									<div class="col-md-6">
-										<textarea class="form-control"></textarea>
+										<input type="text" name="regular" class="form-control">
 									</div>
 								</div>
 								<div class="form-group">

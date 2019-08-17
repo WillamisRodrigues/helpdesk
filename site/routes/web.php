@@ -11,40 +11,31 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('auth/login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('home', 'HomeController');
+Route::resource('aluno', 'AlunoController');
+Route::resource('professor', 'ProfessorController');
+Route::resource('unidades', 'UnidadeController');
+Route::resource('chamados', 'ChamadoController');
+Route::resource('usuarios', 'UsuarioController');
+Route::resource('categorias', 'CategoriaController');
 
 Route::get('/ticket', function () {
     return view('ticket.index');
 });
 
-Route::get('/chamados', function () {
-    return view('chamados.index');
+Route::get('/adicionar_professor', function () {
+    return view('professor.create');
 });
 
-Route::get('/unidades', function () {
-    return view('unidades.index');
-});
-
-Route::get('/professor', function () {
-    return view('professor.index');
-});
-
-Route::get('/aluno', function () {
-    return view('aluno.index');
-});
-
-Route::get('/categorias', function () {
-    return view('categorias.index');
-});
-
-Route::get('/usuarios', function () {
-    return view('usuarios.index');
+Route::get('/adicionar_aluno', function () {
+    return view('aluno.create');
 });
 
 Route::get('/arquivados', function () {

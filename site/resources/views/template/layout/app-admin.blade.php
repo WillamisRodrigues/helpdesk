@@ -24,7 +24,11 @@
 	<script src="{{asset('assets/js/custom.js')}}"></script>
 	<script>
 		$(document).ready(function() {
-    		$('.list').DataTable();
+    		$('.list').DataTable({
+				"oLanguage":{
+					"sUrl" : "../br/br.txt"
+				}
+			});
 		});
 	</script>
 </body>

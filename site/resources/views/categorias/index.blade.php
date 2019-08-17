@@ -1,5 +1,6 @@
 @extends('template.layout.app-admin')
-    @section('titulo','Categorias')
+	@section('titulo','Categorias')
+	@section('configuracao','active')
     @section('conteudo')
     @include('template.layout.header')
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
@@ -37,8 +38,12 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>1</td>
-									<td>System Architect</td>
+								@foreach ($categorias as $categoria)
+									<tr>
+										<td>{{$categoria->id_categoria}}</td>
+										<td>{{$categoria->nome_categoria}}</td>
+									</tr>
+								@endforeach
 								</tr>
 							</tbody>
 						</table>

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
+use DB;
 
-class ChamadosController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class ChamadosController extends Controller
      */
     public function index()
     {
-        return view('');
+
+        $usuarios = DB::table('users')->get();
+        return view('usuarios.index', compact('usuarios'));
     }
 
     /**

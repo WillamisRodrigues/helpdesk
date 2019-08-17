@@ -1,5 +1,6 @@
 @extends('template.layout.app-admin')
-    @section('titulo','Usuários')
+	@section('titulo','Usuários')
+	@section('configuracao','active')
     @section('conteudo')
     @include('template.layout.header')
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
@@ -33,16 +34,16 @@
 									<th>Nome Usuário</th>
 									<th>Email</th>
 									<th>Data Criação</th>
-									<th>Status</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>System Architect</td>
-									<td>System Architect</td>
-								</tr>
+								@foreach ($usuarios as $usuario)
+									<tr>
+										<td>{{$usuario->name}}</td>
+										<td>{{$usuario->email}}</td>
+										<td>{{$usuario->created_at}}</td>
+									</tr>
+								@endforeach
 							</tbody>
 						</table>
 						</div>
