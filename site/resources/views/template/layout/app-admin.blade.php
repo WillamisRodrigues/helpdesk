@@ -22,6 +22,12 @@
 	<script src="{{asset('assets/js/easypiechart-data.js')}}"></script>
 	<script src="{{asset('assets/js/bootstrap-datepicker.js')}}"></script>
 	<script src="{{asset('assets/js/custom.js')}}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+	<script>
+        $(document).ready(function(){
+          $('.telefone').mask('(00) 00000-0000');
+        });
+    </script>
 	<script>
 		$(document).ready(function() {
     		$('.list').DataTable({

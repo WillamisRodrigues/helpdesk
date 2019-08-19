@@ -35,23 +35,23 @@
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Email:</label>
 									<div class="col-md-6">
-										<input type="text" name="regular" class="form-control">
+										<input type="email" name="regular" class="form-control">
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-md-2 control-label">Gêreno:</label>
+									<label class="col-md-2 control-label">Gênero:</label>
 									<div class="col-md-6">
 										<select class="form-control">
-                                            <option>Masculino</option>
-                                            <option>Feminino</option>
-                                            <option>Outros</option>
+                                            <option value="masculino">Masculino</option>
+                                            <option value="feminino">Feminino</option>
+                                            <option value="outros">Outros</option>
 										</select>
 									</div>
                                 </div>
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Telefone:</label>
 									<div class="col-md-6">
-										<input type="text" name="regular" class="form-control">
+										<input type="text" name="regular" class="form-control telefone">
 									</div>
 								</div>
 								<div class="form-group">

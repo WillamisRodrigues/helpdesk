@@ -45,7 +45,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-md-2 control-label">Gêreno:</label>
+									<label class="col-md-2 control-label">Gênero:</label>
 									<div class="col-md-6">
 										<select class="form-control">
                                             <option>Masculino</option>

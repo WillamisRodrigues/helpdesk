@@ -34,7 +34,6 @@
 									<th>Nome Usuário</th>
 									<th>Email</th>
 									<th>Nível</th>
-                                    <th>Senha</th>
                                     <th>Status</th>
 									<th>Ação</th>
 								</tr>
@@ -45,7 +44,6 @@
                                 <td>{{$professor->nome}}</td>
 								<td>{{$professor->email}}</td>
 								<td>Professor</td>
-                                <td>{{$professor->senha}}</td>
                                 @if($professor->status == 0)
                                 <td>Ativo</td>
                                 @else

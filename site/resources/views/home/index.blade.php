@@ -27,7 +27,7 @@
 				<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-users color-blue"></em>
-							<div class="large">120</div>
+							<div class="large">{{$totalProfessor}}</div>
 							<div class="text-muted">Quantidades de Professores </div>
 						</div>
 					</div>
@@ -35,16 +35,16 @@
 				<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
 					<div class="panel panel-blue panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-users color-blue"></em>
-							<div class="large">52</div>
-							<div class="text-muted">Alunos Free</div>
+							<div class="large">{{$totalAlunoPremium}}</div>
+							<div class="text-muted">Alunos Premium</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
 					<div class="panel panel-orange panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-users color-teal"></em>
-							<div class="large">24</div>
-							<div class="text-muted">Alunos Premium</div>
+							<div class="large">{{$totalAlunoFree}}</div>
+							<div class="text-muted">Alunos Free</div>
 						</div>
 					</div>
 				</div>

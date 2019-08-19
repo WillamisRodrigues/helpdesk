@@ -36,10 +36,12 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($unidades as $unidade)
 								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
+									<td>{{$unidade->nome_unidade}}</td>
+									<td>{{$unidade->tipo}}</td>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 						</div>

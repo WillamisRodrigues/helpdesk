@@ -24,30 +24,37 @@
 						<i class="fa fa-book	"></i>	
 						Meus Chamados</div>
 						<div class="panel-body">
-						<table class="display list" style="width:100%">
+						<table class="display list table table-hover table-responsive" style="width:100%">
 							<thead>
 								<tr>
 									<th>Titulo</th>
+									<th>Observação</th>
 									<th>Escola Parceira</th>
 									<th>Categoria</th>
-									<th>Observação</th>
-									<th>Prioridade</th>
 									<th>Status</th>
+									<th>Data Criação</th>
+									<th>Última Modificação</th>
 									<th>Ação</th>
 								</tr>
 							</thead>
 							<tbody>
+								@foreach ($chamados as $chamado)
 								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>Edinburgh</td>
-									<td>61</td>
-									<td>2011/04/25</td>
-									<td>$320,800</td>
-									<td><a href="" class="btn btn-primary"> <i class="fa fa-pencil"></i> Editar</a>
-									<a href="" class="btn btn-danger"> <i class="fa fa-archive"></i> Arquivar</a>
+									<td>{{$chamado->titulo_chamado}}</td>
+									<td>{{$chamado->observacao}}</td>
+									<td>{{$chamado->nome_unidade}}</td>
+									<td>{{$chamado->nome_categoria}}</td>
+									<td>
+									@if($chamado->status==0)
+									<button class="btn btn-success"> <i class="fa fa-archive"></i> Aberto</button>
+									@endif
+									</td>
+									<td>{{$chamado->created_at}}</td>
+									<td>{{$chamado->updated_at}}</td>
+									<td><a href="{{ route('chamados.edit',[$chamado->id]) }}" class="btn btn-warning"> <i class="fa fa-pencil"></i> Editar</a>
 									</td>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 						</div>

@@ -32,10 +32,12 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-md-2 control-label">Escola Parceira:</label>
+									<label class="col-md-2 control-label">Unidade:</label>
 									<div class="col-md-6">
 										<select class="form-control">
-											<option>-- Selecione --</option>
+											@foreach($unidades as $unidade)
+												<option value="{{$unidade->id_unidade}}">{{$unidade->nome_unidade}}</option>
+											@endforeach
 										</select>
 									</div>
 								</div>
@@ -43,7 +45,11 @@
 									<label class="col-md-2 control-label">Categoria:</label>
 									<div class="col-md-6">
 										<select class="form-control">
-											<option>-- Selecione --</option>
+										@foreach ($categorias as $categoria)
+											<option value="{{$categoria->id_categoria}}">
+												{{$categoria->nome_categoria}}
+											</option>
+										@endforeach
 										</select>
 									</div>
 								</div>

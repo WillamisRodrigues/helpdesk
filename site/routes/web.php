@@ -25,10 +25,8 @@ Route::resource('unidades', 'UnidadeController');
 Route::resource('chamados', 'ChamadoController');
 Route::resource('usuarios', 'UsuarioController');
 Route::resource('categorias', 'CategoriaController');
-
-Route::get('/ticket', function () {
-    return view('ticket.index');
-});
+Route::get('arquivados', 'ChamadoController@arquivados');
+Route::get('ticket', 'ChamadoController@create');
 
 Route::get('/adicionar_professor', function () {
     return view('professor.create');
@@ -37,8 +35,3 @@ Route::get('/adicionar_professor', function () {
 Route::get('/adicionar_aluno', function () {
     return view('aluno.create');
 });
-
-Route::get('/arquivados', function () {
-    return view('arquivados.index');
-});
-

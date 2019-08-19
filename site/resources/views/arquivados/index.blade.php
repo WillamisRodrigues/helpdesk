@@ -28,24 +28,28 @@
 							<thead>
 								<tr>
 									<th>Titulo</th>
-									<th>Escola Parceira</th>
-									<th>Categoria</th>
 									<th>Observação</th>
-									<th>Prioridade</th>
+									<th>Escola</th>
+									<th>Categoria</th>
+									<th>Data Arquivada</th>
 									<th>Status</th>
 								</tr>
 							</thead>
 							<tbody>
+								@foreach ($chamados as $chamado)
 								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>Edinburgh</td>
-									<td>61</td>
-									<td>2011/04/25</td>
+									<td>{{$chamado->titulo_chamado}}</td>
+									<td>{{$chamado->observacao}}</td>
+									<td>{{$chamado->nome_unidade}}</td>
+									<td>{{$chamado->nome_categoria}}</td>
+									<td>{{$chamado->data_arquivado}}</td>
 									<td>
-									<a href="" class="btn btn-danger"> <i class="fa fa-archive"></i> Arquivado</a>
+									@if($chamado->status==1)
+									<button class="btn btn-danger"> <i class="fa fa-archive"></i> Arquivado</button>
+									@endif
 									</td>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 						</div>
