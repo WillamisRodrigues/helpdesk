@@ -8,7 +8,7 @@ use DB;
 
 class UnidadeController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -16,9 +16,9 @@ class UnidadeController extends Controller
 
     public function index()
     {
-        $unidades = DB::table('unidades')
-        ->join('escola_parceira', 'unidades.id_unidade', '=', 'escola_parceira.id_escola')
-            ->select('unidades.*', 'escola_parceira.tipo')
+        $unidades = DB::table('unidade')
+        ->join('escola_parceira', 'unidade.idUnidade', '=', 'escola_parceira.id_escola')
+            ->select('unidade.*', 'escola_parceira.tipo')
             ->get();
         return view('unidades.index', compact('unidades'));
     }

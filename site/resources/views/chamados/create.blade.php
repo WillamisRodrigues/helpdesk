@@ -6,7 +6,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		@include('template.menu.sidebar')
 	</div><!--/.sidebar-->
-		
+
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -21,22 +21,23 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-book	"></i>	
+						<i class="fa fa-book	"></i>
 						Abertura de Chamado</div>
 						<div class="panel-body">
-							<form class="form-horizontal row-border" action="#">
+                        <form class="form-horizontal row-border" action="{{route('chamados.store')}}" method="POST">
+                            {{ csrf_field() }}
 								<div class="form-group">
 									<label class="col-md-2 control-label">Titulo do Chamado:</label>
 									<div class="col-md-6">
-										<input type="text" name="regular" class="form-control">
+										<input type="text" name="titulo_chamado" class="form-control">
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-2 control-label">Unidade:</label>
 									<div class="col-md-6">
-										<select class="form-control">
+										<select class="form-control" name="id_escola">
 											@foreach($unidades as $unidade)
-												<option value="{{$unidade->id_unidade}}">{{$unidade->nome_unidade}}</option>
+												<option value="{{$unidade->idUnidade}}">{{$unidade->unidade}}</option>
 											@endforeach
 										</select>
 									</div>
@@ -44,9 +45,9 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Categoria:</label>
 									<div class="col-md-6">
-										<select class="form-control">
+										<select class="form-control" name="id_categoria">
 										@foreach ($categorias as $categoria)
-											<option value="{{$categoria->id_categoria}}">
+											<option value="{{$categoria->id}}">
 												{{$categoria->nome_categoria}}
 											</option>
 										@endforeach
@@ -56,13 +57,13 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Observação:</label>
 									<div class="col-md-6">
-										<textarea class="form-control"></textarea>
+										<textarea class="form-control" name="observacao"></textarea>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-2 control-label"></label>
 									<div class="col-md-6">
-										<button class="btn btn-success">Lançar Chamado </button>
+										<button type="submit" class="btn btn-success">Lançar Chamado </button>
 									</div>
 								</div>
 							</form>
@@ -70,6 +71,6 @@
 					</div>
 				</div>
 			</div><!--/.row-->
-				
+
     </div><!--/.main-->
 @endsection

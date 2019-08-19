@@ -6,7 +6,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		@include('template.menu.sidebar')
 	</div><!--/.sidebar-->
-		
+
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -21,7 +21,7 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-book	"></i>	
+						<i class="fa fa-book	"></i>
 						Meus Chamados</div>
 						<div class="panel-body">
 						<table class="display list table table-hover table-responsive" style="width:100%">
@@ -42,7 +42,7 @@
 								<tr>
 									<td>{{$chamado->titulo_chamado}}</td>
 									<td>{{$chamado->observacao}}</td>
-									<td>{{$chamado->nome_unidade}}</td>
+									<td>{{$chamado->unidade}}</td>
 									<td>{{$chamado->nome_categoria}}</td>
 									<td>
 									@if($chamado->status==0)
@@ -61,6 +61,6 @@
 					</div>
 				</div>
 			</div><!--/.row-->
-				
+
     </div><!--/.main-->
 @endsection
