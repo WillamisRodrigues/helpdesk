@@ -1,6 +1,6 @@
 <div class="profile-sidebar">
 				<div class="profile-userpic">
-					<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
+					<img src="{{asset('assets/img/user.png')}}" class="img-responsive" alt="">
 				</div>
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">{{Auth::user()->name}}</div>
