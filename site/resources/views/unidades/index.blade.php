@@ -17,9 +17,9 @@
 			</ol>
 		</div><!--/.row-->
 		<br>
-			<button class="btn btn-success pull-right">
+			<a href="/adicionar_unidade" class="btn btn-success pull-right">
 			<i class="fa fa-home"></i>
-			Adicionar Unidade</button>
+			Adicionar Unidade</a>
 			<div style="height:55px;"></div>
 			<div class="row">
 				<div class="col-md-12">

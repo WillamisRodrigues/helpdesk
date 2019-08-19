@@ -17,7 +17,7 @@ class UnidadeController extends Controller
     public function index()
     {
         $unidades = DB::table('unidade')
-        ->join('escola_parceira', 'unidade.idUnidade', '=', 'escola_parceira.id_escola')
+        ->join('escola_parceira', 'unidade.tipo', '=', 'escola_parceira.id_escola')
             ->select('unidade.*', 'escola_parceira.tipo')
             ->get();
         return view('unidades.index', compact('unidades'));
@@ -25,12 +25,25 @@ class UnidadeController extends Controller
 
     public function create()
     {
-        //
+        $escolas = DB::table('escola_parceira')->get();
+        return view('unidades.create', compact('escolas'));
     }
 
     public function store(Request $request)
     {
-        //
+         // $request->validate([
+        //     'titulo_chamado'=>'required',
+        //     'observacao'=>'required',
+
+        // ]);
+
+        $unidade = new Unidade();
+        $unidade->unidade = $request->get('unidade');
+        $unidade->tipo = $request->get('tipo');
+        $unidade->save();
+
+        return redirect()->route('unidades.index')
+        ->with('sucess','Cadastro com sucesso');
     }
 
     public function show($id)
