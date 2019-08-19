@@ -6,7 +6,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		@include('template.menu.sidebar')
 	</div><!--/.sidebar-->
-		
+
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -21,7 +21,7 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-cogs"></i>	
+						<i class="fa fa-cogs"></i>
 						Categorias</div>
 						<div class="panel-body">
 						<table class="display list" style="width:100%">
@@ -34,7 +34,7 @@
 							<tbody>
 							@foreach ($categorias as $categoria)
 									<tr>
-										<td>{{$categoria->id_categoria}}</td>
+										<td>{{$categoria->id}}</td>
 										<td>{{$categoria->nome_categoria}}</td>
 									</tr>
 								@endforeach
@@ -44,6 +44,6 @@
 					</div>
 				</div>
 			</div><!--/.row-->
-				
+
     </div><!--/.main-->
 @endsection
