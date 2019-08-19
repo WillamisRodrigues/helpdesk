@@ -45,9 +45,9 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Categoria:</label>
 									<div class="col-md-6">
-										<select class="form-control" name="id_categoria">
+										<select class="form-control" name="id">
                                             @foreach($categoria as $categorias)
-											<option value="{{$categorias->id_categoria}}">{{$categorias->nome_categoria}}</option>
+											<option value="{{$categorias->id}}">{{$categorias->nome_categoria}}</option>
                                             @endforeach
 										</select>
 									</div>
