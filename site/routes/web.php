@@ -27,6 +27,9 @@ Route::resource('usuarios', 'UsuarioController');
 Route::resource('categorias', 'CategoriaController');
 Route::get('arquivados', 'ChamadoController@arquivados');
 Route::get('ticket', 'ChamadoController@create');
+Route::get('adicionar_unidade', 'UnidadeController@create');
+Route::get('adicionar_categoria', 'CategoriaController@create');
+Route::get('adicionar_usuario', 'UsuarioController@create');
 
 Route::get('/adicionar_professor', function () {
     return view('professor.create');

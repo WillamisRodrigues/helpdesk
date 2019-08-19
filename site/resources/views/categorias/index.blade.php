@@ -17,6 +17,10 @@
 			</ol>
 		</div><!--/.row-->
 		<br>
+		<a href="/adicionar_categoria" class="btn btn-success pull-right">
+			<i class="fa fa-cog"></i>
+			Adicionar Categoria</a>
+			<div style="height:50px;"></div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel panel-default">

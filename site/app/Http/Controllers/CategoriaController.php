@@ -22,12 +22,17 @@ class CategoriaController extends Controller
 
     public function create()
     {
-        //
+        return view('categorias.create');
     }
 
     public function store(Request $request)
     {
-        //
+        $categoria = new Categoria();
+        $categoria->nome_categoria = $request->get('nome_categoria');
+        $categoria->save();
+
+        return redirect()->route('categorias.index')
+        ->with('sucess','Cadastro com sucesso');
     }
 
     public function show($id)
