@@ -25,39 +25,52 @@
 						<i class="fa fa-graduation-cap"></i>	
 						Adicionar Professor</div>
 						<div class="panel-body">
-							<form class="form-horizontal row-border" action="#">
+						<form class="form-horizontal row-border" action="{{ route('professor.store') }}" method="POST">
+                            {{ csrf_field() }}
 								<div class="form-group">
 									<label class="col-md-2 control-label">Nome:</label>
 									<div class="col-md-6">
-										<input type="text" name="regular" class="form-control">
+										<input type="text" name="nome" class="form-control">
+									</div>
+                                </div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">Sobrenome:</label>
+									<div class="col-md-6">
+										<input type="text" name="sobrenome" class="form-control">
+									</div>
+                                </div>
+                                <div class="form-group">
+									<label class="col-md-2 control-label">Senha:</label>
+									<div class="col-md-6">
+										<input type="text" name="senha" class="form-control">
 									</div>
                                 </div>
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Email:</label>
 									<div class="col-md-6">
-										<input type="email" name="regular" class="form-control">
+										<input type="email" name="email" class="form-control">
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-2 control-label">Gênero:</label>
 									<div class="col-md-6">
-										<select class="form-control">
-                                            <option value="masculino">Masculino</option>
-                                            <option value="feminino">Feminino</option>
-                                            <option value="outros">Outros</option>
+										<select class="form-control" name="sexo">
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                            <option value="Outros">Outros</option>
 										</select>
 									</div>
                                 </div>
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Telefone:</label>
 									<div class="col-md-6">
-										<input type="text" name="regular" class="form-control telefone">
+										<input type="text" name="telefone" class="form-control telefone">
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-2 control-label"></label>
 									<div class="col-md-6">
-										<button class="btn btn-success">Lançar Chamado </button>
+										<button class="btn btn-success" type="submit">Cadastrar </button>
 									</div>
 								</div>
 							</form>
