@@ -23,6 +23,9 @@
 			<div style="height:50px;"></div>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-cogs"></i>

@@ -27,11 +27,9 @@ class UsuarioController extends Controller
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'titulo_chamado'=>'required',
-        //     'observacao'=>'required',
-
-        // ]);
+        $request->validate([
+        'email'=>'required|unique:users',
+        ]);
 
             $usuario = new User();
             $usuario->name = $request->get('name');
@@ -40,7 +38,7 @@ class UsuarioController extends Controller
             $usuario->save();
 
             return redirect()->route('usuarios.index')
-            ->with('sucess','Cadastro com sucesso');
+            ->with('success','Cadastro com sucesso');
     }
 
     public function show($id)

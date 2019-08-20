@@ -20,6 +20,9 @@
 		<br>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>
@@ -39,6 +42,12 @@
 										<input type="text" name="nome" class="form-control">
 									</div>
                                 </div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">Sobrenome:</label>
+									<div class="col-md-6">
+										<input type="text" name="sobrenome" class="form-control">
+									</div>
+                                </div>
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Senha:</label>
 									<div class="col-md-6">
@@ -54,17 +63,17 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Gênero:</label>
 									<div class="col-md-6">
-										<select class="form-control">
-                                            <option>Masculino</option>
-                                            <option>Feminino</option>
-                                            <option>Outros</option>
+										<select class="form-control" name="sexo">
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                            <option value="Outros">Outros</option>
 										</select>
 									</div>
                                 </div>
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Telefone:</label>
 									<div class="col-md-6">
-										<input type="text" name="telefone" class="form-control">
+										<input type="text" name="telefone" class="form-control telefone">
 									</div>
 								</div>
 								<div class="form-group">

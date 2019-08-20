@@ -19,9 +19,12 @@
 		<br>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-book	"></i>
+						<i class="fa fa-book"></i>
 						Meus Chamados</div>
 						<div class="panel-body">
 						<table class="display list table table-hover table-responsive" style="width:100%">
@@ -49,8 +52,8 @@
 									<button class="btn btn-success"> <i class="fa fa-archive"></i> Aberto</button>
 									@endif
 									</td>
-									<td>{{$chamado->created_at}}</td>
-									<td>{{$chamado->updated_at}}</td>
+									<td>{{date('d/m/Y H:m:s', strtotime($chamado->created_at))}}</td>
+									<td>{{date('d/m/Y H:m:s', strtotime($chamado->updated_at))}}</td>
 									<td><a href="{{ route('chamados.edit',[$chamado->id]) }}" class="btn btn-warning"> <i class="fa fa-pencil"></i> Editar</a>
 									</td>
 								</tr>

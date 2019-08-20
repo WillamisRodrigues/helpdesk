@@ -31,11 +31,9 @@ class UnidadeController extends Controller
 
     public function store(Request $request)
     {
-         // $request->validate([
-        //     'titulo_chamado'=>'required',
-        //     'observacao'=>'required',
-
-        // ]);
+         $request->validate([
+            'unidade'=>'required|unique:unidade',
+        ]);
 
         $unidade = new Unidade();
         $unidade->unidade = $request->get('unidade');
@@ -43,7 +41,7 @@ class UnidadeController extends Controller
         $unidade->save();
 
         return redirect()->route('unidades.index')
-        ->with('sucess','Cadastro com sucesso');
+        ->with('success','Cadastro com sucesso');
     }
 
     public function show($id)

@@ -20,6 +20,9 @@
 		<br>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-user"></i>
@@ -45,7 +48,7 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Categoria:</label>
 									<div class="col-md-6">
-										<select class="form-control" name="id">
+										<select class="form-control" name="id_categoria">
                                             @foreach($categoria as $categorias)
 											<option value="{{$categorias->id}}">{{$categorias->nome_categoria}}</option>
                                             @endforeach
