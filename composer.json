@@ -1,0 +1,6 @@
+{
+    "require": {
+        "consoletvs/charts": "5.*",
+        "fx3costa/laravelchartjs": "^2.5"
+    }
+}
