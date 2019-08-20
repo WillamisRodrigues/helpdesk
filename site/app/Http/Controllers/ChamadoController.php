@@ -30,6 +30,7 @@ class ChamadoController extends Controller
         $chamados = DB::table('chamados')
         ->join('unidade', 'chamados.id_escola', '=', 'unidade.idUnidade')
         ->join('categorias', 'chamados.id_categoria', '=', 'categorias.id')
+        ->select('chamados.*', 'unidade.unidade', 'categorias.nome_categoria')
         ->where('status', 1)
         ->get();
         return view('arquivados.index', compact('chamados'));
@@ -46,11 +47,10 @@ class ChamadoController extends Controller
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'titulo_chamado'=>'required',
-        //     'observacao'=>'required',
-
-        // ]);
+        $request->validate([
+            'titulo_chamado'=>'required|unique:chamados',
+            'observacao'=>'required',
+        ]);
 
         $chamado = new Chamado();
         $chamado->titulo_chamado = $request->get('titulo_chamado');
@@ -60,7 +60,7 @@ class ChamadoController extends Controller
         $chamado->save();
 
         return redirect()->route('chamados.index')
-        ->with('sucess','Cadastro com sucesso');
+        ->with('success','Cadastrado com sucesso');
     }
 
 
@@ -86,8 +86,9 @@ class ChamadoController extends Controller
 
         $chamado->update($request->all());
         $chamado->save();
-        $request->session()->flash('message', 'Alterado com sucesso');
-        return redirect('chamados');
+        
+        return redirect()->route('chamados.index')
+        ->with('info','Editado com sucesso');
     }
 
 

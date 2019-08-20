@@ -31,10 +31,11 @@
 									<th>Observação</th>
 									<th>Escola</th>
 									<th>Categoria</th>
-									<th>última Modificação</th>
+									<th>Última Modificação</th>
 									<th>Status</th>
 								</tr>
 							</thead>
+							
 							<tbody>
 								@foreach ($chamados as $chamado)
 								<tr>
@@ -42,7 +43,8 @@
 									<td>{{$chamado->observacao}}</td>
 									<td>{{$chamado->unidade}}</td>
 									<td>{{$chamado->nome_categoria}}</td>
-									<td>{{$chamado->updated_at}}</td>
+									<td>{{date('d/m/Y H:m:s', strtotime($chamado->updated_at))}}</td>
+									
 									<td>
 									@if($chamado->status==1)
 									<button class="btn btn-danger"> <i class="fa fa-archive"></i> Arquivado</button>

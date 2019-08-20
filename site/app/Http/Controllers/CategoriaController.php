@@ -27,12 +27,16 @@ class CategoriaController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nome_categoria'=>'required|unique:categorias',
+        ]);
+
         $categoria = new Categoria();
         $categoria->nome_categoria = $request->get('nome_categoria');
         $categoria->save();
 
         return redirect()->route('categorias.index')
-        ->with('sucess','Cadastro com sucesso');
+        ->with('success','Cadastro com sucesso');
     }
 
     public function show($id)

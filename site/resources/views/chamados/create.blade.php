@@ -19,9 +19,12 @@
 		<br>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-book	"></i>
+						<i class="fa fa-book"></i>
 						Abertura de Chamado</div>
 						<div class="panel-body">
                         <form class="form-horizontal row-border" action="{{route('chamados.store')}}" method="POST">
@@ -29,7 +32,7 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Titulo do Chamado:</label>
 									<div class="col-md-6">
-										<input type="text" name="titulo_chamado" class="form-control">
+										<input type="text" name="titulo_chamado" class="form-control" value="{{old('titulo_chamado')}}">
 									</div>
 								</div>
 								<div class="form-group">
@@ -47,7 +50,7 @@
 									<div class="col-md-6">
 										<select class="form-control" name="id_categoria">
 										@foreach ($categorias as $categoria)
-											<option value="{{$categoria->id_categoria}}">
+											<option value="{{$categoria->id}}">
 												{{$categoria->nome_categoria}}
 											</option>
 										@endforeach
@@ -57,7 +60,7 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Observação:</label>
 									<div class="col-md-6">
-										<textarea class="form-control" name="observacao"></textarea>
+										<textarea class="form-control" name="observacao" value="{{old('observacao')}}"></textarea>
 									</div>
 								</div>
 								<div class="form-group">

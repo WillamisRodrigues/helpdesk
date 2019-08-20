@@ -20,6 +20,9 @@
 		<br>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>

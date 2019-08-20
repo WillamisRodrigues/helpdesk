@@ -20,6 +20,9 @@
 		<br>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-user"></i>
@@ -31,7 +34,7 @@
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Matricula:</label>
 									<div class="col-md-6">
-										<input type="text" value="{{ $aluno->matricula }}" maxlength="6" name="matricula" class="form-control">
+										<input type="text" value="{{ $aluno->matricula }}" maxlength="10" name="matricula" class="form-control">
 									</div>
 								</div>
 								<div class="form-group">

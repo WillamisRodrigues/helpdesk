@@ -30,7 +30,7 @@ class AlunoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'matricula'=>'required|unique:clientes',
+            'matricula'=>'required',
             'email'=>'required|unique:clientes',
         ]);
         
@@ -84,8 +84,8 @@ class AlunoController extends Controller
 
         $aluno->update($request->all());
         $aluno->save();
-        // $aluno->session()->flash('message', 'Alterado com sucesso');
-        return redirect('aluno');
+        return redirect()->route('aluno.index')
+        ->with('info', 'Editado com Sucesso.');
     }
 
     public function destroy(Aluno $aluno)

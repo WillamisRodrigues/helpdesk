@@ -23,6 +23,9 @@
 			<div style="height:55px;"></div>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-user"></i>	
@@ -41,7 +44,7 @@
 									<tr>
 										<td>{{$usuario->name}}</td>
 										<td>{{$usuario->email}}</td>
-										<td>{{$usuario->created_at}}</td>
+										<td>{{date('d/m/Y H:m:s', strtotime($usuario->created_at))}}</td>
 									</tr>
 								@endforeach
 							</tbody>

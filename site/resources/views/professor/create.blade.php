@@ -20,6 +20,9 @@
 		<br>
 			<div class="row">
 				<div class="col-md-12">
+					@include('template.alerta.flash-message')
+				</div>
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>	
@@ -30,13 +33,13 @@
 								<div class="form-group">
 									<label class="col-md-2 control-label">Nome:</label>
 									<div class="col-md-6">
-										<input type="text" name="nome" class="form-control">
+										<input type="text" name="nome" class="form-control" value="{{old('nome')}}">
 									</div>
                                 </div>
 								<div class="form-group">
 									<label class="col-md-2 control-label">Sobrenome:</label>
 									<div class="col-md-6">
-										<input type="text" name="sobrenome" class="form-control">
+										<input type="text" name="sobrenome" class="form-control" value="{{old('sobrenome')}}">
 									</div>
                                 </div>
                                 <div class="form-group">
@@ -48,7 +51,7 @@
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Email:</label>
 									<div class="col-md-6">
-										<input type="email" name="email" class="form-control">
+										<input type="email" name="email" class="form-control" value="{{old('email')}}">
 									</div>
 								</div>
 								<div class="form-group">
@@ -64,7 +67,7 @@
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Telefone:</label>
 									<div class="col-md-6">
-										<input type="text" name="telefone" class="form-control telefone">
+										<input type="text" name="telefone" class="form-control telefone" value="{{old('telefone')}}">
 									</div>
 								</div>
 								<div class="form-group">

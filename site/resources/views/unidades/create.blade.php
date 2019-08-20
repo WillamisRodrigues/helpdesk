@@ -18,10 +18,13 @@
 		</div><!--/.row-->
 		<br>
 			<div class="row">
+			<div class="col-md-12">
+				@include('template.alerta.flash-message')
+			</div>
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
-						<i class="fa fa-book	"></i>
+						<i class="fa fa-book"></i>
 						Nova Unidade</div>
 						<div class="panel-body">
                         <form class="form-horizontal row-border" action="{{route('unidades.store')}}" method="POST">

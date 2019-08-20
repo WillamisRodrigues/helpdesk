@@ -17,6 +17,7 @@
 			</ol>
 		</div><!--/.row-->
 		<br>
+			@include('template.alerta.flash-message')
 			<a href="/adicionar_unidade" class="btn btn-success pull-right">
 			<i class="fa fa-home"></i>
 			Adicionar Unidade</a>

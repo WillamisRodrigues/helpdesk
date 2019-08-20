@@ -82,8 +82,9 @@ class ProfessorController extends Controller
 
         $professor->update($request->all());
         $professor->save();
-        $request->session()->flash('message', 'Alterado com sucesso');
-        return redirect('professor');
+        
+        return redirect()->route('professor.index')
+            ->with('info', 'Editado com sucesso.');
 
     }
 
