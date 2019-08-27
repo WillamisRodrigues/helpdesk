@@ -31,12 +31,13 @@
 						<i class="fa fa-graduation-cap"></i>
 						Alunos
 						
-								<form action="{{ route('aluno.index') }}" method="get" class="form-inline pull-right">
+								<form action="/busca" method="get" class="form-inline pull-right">
 									<div class="form-group">
 										<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
 									</div>
 									<div class="form-group">
 										<button class="btn btn-success" type="submit" >Procurar</button>
+										<a class="btn btn-danger" href="{{route('aluno.index')}}">Limpar</a>
 									</div>
 								</form>
 							

@@ -17,13 +17,24 @@ class AlunoController extends Controller
 
     public function index(Request $request)
     {
+        $alunos = DB::table('clientes')->paginate(10);
+      
+        return view('aluno.index',compact('alunos'));
+    }
+
+    public function busca(Request $request)
+    {
         $busca = $request->get('nome');
         $alunos = DB::table('clientes')->where([
             ['email','LIKE','%'.$busca.'%'],
-            //['matricula','LIKE','%'.$busca.'%'],
             ['nivel','!=', 1]
-            ])->paginate(10);
-        return view('aluno.index', compact('alunos'));
+            ])->orWhere('matricula', 'LIKE', '%'.$busca.'%')->paginate(10);
+
+            if($busca ==""){
+                return "vazio";
+            }else{
+                return view('aluno.index', compact('alunos'));
+            }
     }
 
     public function create()
