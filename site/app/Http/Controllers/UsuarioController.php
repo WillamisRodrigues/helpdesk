@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use DB;
 
@@ -34,7 +35,7 @@ class UsuarioController extends Controller
             $usuario = new User();
             $usuario->name = $request->get('name');
             $usuario->email = $request->get('email');
-            $usuario->password = $request->get('password');
+            $usuario->password =  Hash::make($request->get('password'));
             $usuario->save();
 
             return redirect()->route('usuarios.index')

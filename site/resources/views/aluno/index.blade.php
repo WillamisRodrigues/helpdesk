@@ -29,19 +29,21 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>
-						Alunos</div>
-						<div class="col-md-6">
-							<form action="{{ route('aluno.index') }}" method="get" class="form-inline">
-								<div class="form-group">
-									<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
-								</div>
-								<div class="form-group">
-									<button class="btn btn-success" type="submit" >Procurar</button>
-								</div>
-							</form>
+						Alunos
+						
+								<form action="{{ route('aluno.index') }}" method="get" class="form-inline pull-right">
+									<div class="form-group">
+										<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
+									</div>
+									<div class="form-group">
+										<button class="btn btn-success" type="submit" >Procurar</button>
+									</div>
+								</form>
+							
 						</div>
+						
 						<div class="panel-body">
-						<table style="width:100%" class="display">
+						<table style="width:100%" class="display table">
 							<thead>
 								<tr>
 									<th>Matricula</th>
@@ -74,8 +76,11 @@
                                 @endforeach
 							</tbody>
 						</table>
+						<div class="pull-right">
+							{{ $alunos->links() }}
 						</div>
-						{{ $alunos->links() }}
+						</div>
+						
 					</div>
 				</div>
 			</div><!--/.row-->

@@ -17,9 +17,10 @@ class AlunoController extends Controller
 
     public function index(Request $request)
     {
-        $nome = $request->get('nome');
+        $busca = $request->get('nome');
         $alunos = DB::table('clientes')->where([
-            ['email','LIKE','%'.$nome.'%'],
+            ['email','LIKE','%'.$busca.'%'],
+            //['matricula','LIKE','%'.$busca.'%'],
             ['nivel','!=', 1]
             ])->paginate(10);
         return view('aluno.index', compact('alunos'));
