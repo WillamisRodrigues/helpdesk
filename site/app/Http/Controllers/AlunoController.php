@@ -19,7 +19,7 @@ class AlunoController extends Controller
     {
         $nome = $request->get('nome');
         $alunos = DB::table('clientes')->where([
-            ['nome','LIKE','%'.$nome.'%'],
+            ['email','LIKE','%'.$nome.'%'],
             ['nivel','!=', 1]
             ])->paginate(10);
         return view('aluno.index', compact('alunos'));
