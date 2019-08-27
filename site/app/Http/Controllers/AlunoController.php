@@ -15,10 +15,13 @@ class AlunoController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-
-        $alunos = DB::table('clientes')->where('nivel','!=' ,1)->get();
+        $nome = $request->get('nome');
+        $alunos = DB::table('clientes')->where([
+            ['nome','LIKE','%'.$nome.'%'],
+            ['nivel','!=', 1]
+            ])->paginate(10);
         return view('aluno.index', compact('alunos'));
     }
 

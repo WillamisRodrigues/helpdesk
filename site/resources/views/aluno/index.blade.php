@@ -30,8 +30,18 @@
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>
 						Alunos</div>
+						<div class="col-md-6 text-right">
+							<form action="{{ route('aluno.index') }}" method="get" class="form-inline">
+								<div class="form-group">
+									<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
+								</div>
+								<div class="form-group">
+									<button class="btn btn-success" type="submit">Procurar<button>
+								</div>
+							</form>
+						</div>
 						<div class="panel-body">
-						<table class="display list" style="width:100%">
+						<table style="width:100%" class="display">
 							<thead>
 								<tr>
 									<th>Matricula</th>
@@ -65,6 +75,7 @@
 							</tbody>
 						</table>
 						</div>
+						{{ $alunos->links() }}
 					</div>
 				</div>
 			</div><!--/.row-->
