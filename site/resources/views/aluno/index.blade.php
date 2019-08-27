@@ -57,6 +57,7 @@
 							</thead>
 							<tbody>
 							@foreach ($alunos as $aluno)
+							
 								<tr>
 								<td>{{$aluno->matricula}}</td>
                                 <td>{{$aluno->nome}}</td>
@@ -77,6 +78,10 @@
                                 @endforeach
 							</tbody>
 						</table>
+						@forelse($alunos as $aluno)
+                		@empty
+                			<p class="text-center"> <strong> Nenhum Resultado Encontrado </strong> </p>
+                		@endforelse
 						<div class="pull-right">
 							{{ $alunos->links() }}
 						</div>

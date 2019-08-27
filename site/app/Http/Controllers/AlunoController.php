@@ -30,11 +30,8 @@ class AlunoController extends Controller
             ['nivel','!=', 1]
             ])->orWhere('matricula', 'LIKE', '%'.$busca.'%')->paginate(10);
 
-            if($busca ==""){
-                return "vazio";
-            }else{
+           
                 return view('aluno.index', compact('alunos'));
-            }
     }
 
     public function create()
