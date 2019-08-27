@@ -30,13 +30,13 @@
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>
 						Alunos</div>
-						<div class="col-md-6 text-right">
+						<div class="col-md-6">
 							<form action="{{ route('aluno.index') }}" method="get" class="form-inline">
 								<div class="form-group">
 									<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
 								</div>
 								<div class="form-group">
-									<button class="btn btn-success" type="submit">Procurar<button>
+									<button class="btn btn-success" type="submit" >Procurar</button>
 								</div>
 							</form>
 						</div>
