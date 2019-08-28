@@ -37,6 +37,8 @@
 									<th>Status</th>
 									<th>Data Criação</th>
 									<th>Última Modificação</th>
+									<th>Quem solicitou</th>
+									<th>Suporte solicitante</th>
 									<th>Ação</th>
 								</tr>
 							</thead>
@@ -54,6 +56,8 @@
 									</td>
 									<td>{{date('d/m/Y H:m:s', strtotime($chamado->created_at))}}</td>
 									<td>{{date('d/m/Y H:m:s', strtotime($chamado->updated_at))}}</td>
+									<td>{{$chamado->quem_solicitou}}</td>
+									<td>{{$chamado->solicitante}}</td>
 									<td><a href="{{ route('chamados.edit',[$chamado->id]) }}" class="btn btn-warning"> <i class="fa fa-pencil"></i> Editar</a>
 									</td>
 								</tr>

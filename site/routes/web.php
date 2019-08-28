@@ -31,4 +31,6 @@ Route::get('adicionar_unidade', 'UnidadeController@create');
 Route::get('adicionar_categoria', 'CategoriaController@create');
 Route::get('adicionar_usuario', 'UsuarioController@create');
 Route::get('adicionar_aluno', 'AlunoController@create');
+Route::get('busca', 'AlunoController@busca');
+Route::get('buscaProfessor', 'ProfessorController@busca');
 Route::get('adicionar_professor', 'ProfessorController@create');

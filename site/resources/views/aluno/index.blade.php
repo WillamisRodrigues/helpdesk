@@ -29,9 +29,22 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>
-						Alunos</div>
+						Alunos
+						
+								<form action="/busca" method="get" class="form-inline pull-right">
+									<div class="form-group">
+										<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
+									</div>
+									<div class="form-group">
+										<button class="btn btn-success" type="submit" >Procurar</button>
+										<a class="btn btn-danger" href="{{route('aluno.index')}}">Limpar</a>
+									</div>
+								</form>
+							
+						</div>
+						
 						<div class="panel-body">
-						<table class="display list" style="width:100%">
+						<table style="width:100%" class="display table">
 							<thead>
 								<tr>
 									<th>Matricula</th>
@@ -44,6 +57,7 @@
 							</thead>
 							<tbody>
 							@foreach ($alunos as $aluno)
+							
 								<tr>
 								<td>{{$aluno->matricula}}</td>
                                 <td>{{$aluno->nome}}</td>
@@ -64,7 +78,15 @@
                                 @endforeach
 							</tbody>
 						</table>
+						@forelse($alunos as $aluno)
+                		@empty
+                			<p class="text-center"> <strong> Nenhum Resultado Encontrado </strong> </p>
+                		@endforelse
+						<div class="pull-right">
+							{{ $alunos->links() }}
 						</div>
+						</div>
+						
 					</div>
 				</div>
 			</div><!--/.row-->

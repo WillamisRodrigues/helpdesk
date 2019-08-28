@@ -21,6 +21,18 @@ class ProfessorController extends Controller
         return view('professor.index', compact('professores'));
     }
 
+    public function busca(Request $request)
+    {
+        $busca = $request->get('nome');
+        $professores = DB::table('clientes')->where([
+            ['email','LIKE','%'.$busca.'%'],
+            ['nivel', 1]
+            ])->orWhere('matricula', 'LIKE', '%'.$busca.'%')->paginate(10);
+
+           
+                return view('professor.index', compact('professores'));
+    }
+
     public function create()
     {
         return view('professor.create');  

@@ -29,9 +29,21 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>
-						Professores</div>
+						Professores
+
+						<form action="/buscaProfessor" method="get" class="form-inline pull-right">
+									<div class="form-group">
+										<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
+									</div>
+									<div class="form-group">
+										<button class="btn btn-success" type="submit" >Procurar</button>
+										<a class="btn btn-danger" href="{{route('professor.index')}}">Limpar</a>
+									</div>
+								</form>
+						</div>
+								
 						<div class="panel-body">
-						<table class="display list" style="width:100%">
+						<table style="width:100%" class="display table">
 							<thead>
 								<tr>
 									<th>Nome Usuário</th>
