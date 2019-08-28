@@ -71,5 +71,7 @@
 				<p class="back-link"> Sistema Helpdesk 2019 </p>
 			</div>
 		</div><!--/.row-->
-		</div>	<!--/.main-->
+        </div>	<!--/.main-->
 	@endsection
+
+
