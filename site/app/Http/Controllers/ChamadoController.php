@@ -48,7 +48,7 @@ class ChamadoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'titulo_chamado'=>'required|unique:chamados',
+            'titulo_chamado'=>'required',
             'observacao'=>'required',
         ]);
 
@@ -57,6 +57,8 @@ class ChamadoController extends Controller
         $chamado->id_escola = $request->get('id_escola');
         $chamado->id_categoria = $request->get('id_categoria');
         $chamado->observacao = $request->get('observacao');
+        $chamado->solicitante = $request->get('solicitante');
+        $chamado->quem_solicitou = $request->get('quem_solicitou');
         $chamado->save();
 
         return redirect()->route('chamados.index')

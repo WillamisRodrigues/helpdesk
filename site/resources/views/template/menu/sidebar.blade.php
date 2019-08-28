@@ -12,7 +12,7 @@
 <ul class="nav menu">
 			<li class="@yield('home')"><a href="/home"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li class="@yield('ticket')"><a href="/ticket"><em class="fa fa-plus">&nbsp;</em> Novo Chamado</a></li>
-			<li class="@yield('chamados')"><a href="/chamados"><em class="fa fa-phone">&nbsp;</em> Meus Chamados</a></li>
+			<li class="@yield('chamados')"><a href="/chamados"><em class="fa fa-phone" >&nbsp;</em> Solicitações</a></li>
 			<li class="@yield('professor')"><a href="/professor"><em class="fa fa-graduation-cap">&nbsp;</em> Professores</a></li>
 			<li class="@yield('aluno')"><a href="/aluno"><em class="fa fa-users">&nbsp;</em> Alunos</a></li>
 			<li class="parent @yield('configuracao') "><a data-toggle="collapse" href="#sub-item-1">

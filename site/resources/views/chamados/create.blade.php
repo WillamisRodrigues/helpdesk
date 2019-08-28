@@ -25,7 +25,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-book"></i>
-						Abertura de Chamado</div>
+						Descrição da  Solicitação</div>
 						<div class="panel-body">
                         <form class="form-horizontal row-border" action="{{route('chamados.store')}}" method="POST">
                             {{ csrf_field() }}
@@ -33,6 +33,12 @@
 									<label class="col-md-2 control-label">Titulo do Chamado:</label>
 									<div class="col-md-6">
 										<input type="text" name="titulo_chamado" class="form-control" value="{{old('titulo_chamado')}}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-2 control-label">Quem solicitou:</label>
+									<div class="col-md-6">
+										<input type="text" name="quem_solicitou" class="form-control" value="{{old('quem_solicitou')}}">
 									</div>
 								</div>
 								<div class="form-group">
@@ -64,9 +70,15 @@
 									</div>
 								</div>
 								<div class="form-group">
+									<label class="col-md-2 control-label">Solicitante:</label>
+									<div class="col-md-6">
+										<textarea readonly class="form-control" name="solicitante" value="{{old('solicitante')}}">{{Auth::user()->name}}</textarea>
+									</div>
+								</div>
+								<div class="form-group">
 									<label class="col-md-2 control-label"></label>
 									<div class="col-md-6">
-										<button type="submit" class="btn btn-success">Lançar Chamado </button>
+										<button type="submit" class="btn btn-success">Inserir Solicitação</button>
 									</div>
 								</div>
 							</form>

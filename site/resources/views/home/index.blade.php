@@ -3,26 +3,29 @@
 	@section('home','active')
 	@section('conteudo')
 	@include('template.layout.header')
-		<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-			@include('template.menu.sidebar')
-		</div><!--/.sidebar-->
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		@include('template.menu.sidebar')
+	</div>
+	<!--/.sidebar-->
 
-		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-			<div class="row">
-				<ol class="breadcrumb">
-					<li><a href="#">
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
 						<em class="fa fa-home"></em>
 					</a></li>
-					<li class="active">Dashboard</li>
-				</ol>
-			</div><!--/.row-->
+				<li class="active">Dashboard</li>
+			</ol>
+		</div>
+		<!--/.row-->
 
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="page-header">Dashboard</h1>
-				</div>
-			</div><!--/.row-->
-			<div class="panel panel-container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Dashboard</h1>
+			</div>
+		</div>
+		<!--/.row-->
+		<div class="panel panel-container">
 			<div class="row">
 				<div class="col-xs-6 col-md-4 col-lg-4 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
@@ -48,28 +51,33 @@
 						</div>
 					</div>
 				</div>
-			</div><!--/.row-->
+			</div>
+			<!--/.row-->
 		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Chamados Atendidos x Chamados Resolvidos
+						Solicitações x Solicitações Resolvidas
 					</div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
-                            <canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
-                            <div style="width:75%;">
-                                {!! $chartjs->render() !!}
-                            </div>
+							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+							<div style="width:75%;">
+								{!! $chartjs->render() !!}
+							</div>
 						</div>
 					</div>
+					
 				</div>
 			</div>
-		</div><!--/.row-->
-			<div class="col-sm-12">
-				<p class="back-link"> Sistema Helpdesk 2019 </p>
-			</div>
-		</div><!--/.row-->
-		</div>	<!--/.main-->
+		</div>
+		<!--/.row-->
+		<div class="col-sm-12">
+			<p class="back-link"> Sistema Helpdesk 2019 </p>
+		</div>
+	</div>
+	<!--/.row-->
+	</div>
+	<!--/.main-->
 	@endsection
