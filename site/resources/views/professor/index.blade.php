@@ -69,10 +69,20 @@
                                 @endforeach
 							</tbody>
 						</table>
+						@forelse($professores as $professor)
+                		@empty
+                			<p class="text-center"> <strong> Nenhum Resultado Encontrado </strong> </p>
+                		@endforelse
+						<div class="pull-right">
+							{{ $professores->links() }}
 						</div>
+						</div>
+						
 					</div>
 				</div>
 			</div><!--/.row-->
 
     </div><!--/.main-->
 @endsection
+
+

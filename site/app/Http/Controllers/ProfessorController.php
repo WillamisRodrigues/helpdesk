@@ -17,7 +17,7 @@ class ProfessorController extends Controller
     public function index()
     {
 
-        $professores = DB::table('clientes')->where('nivel', 1)->get();
+        $professores = DB::table('clientes')->where('nivel', 1)->paginate(10);
         return view('professor.index', compact('professores'));
     }
 
