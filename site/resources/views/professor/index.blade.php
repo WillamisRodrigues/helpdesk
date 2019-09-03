@@ -81,7 +81,7 @@
 					</div>
 				</div>
 			</div><!--/.row-->
-
+		
     </div><!--/.main-->
 @endsection
 
