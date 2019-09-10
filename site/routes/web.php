@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::resource('home', 'HomeController');
 Route::resource('aluno', 'AlunoController');
+Route::resource('alunoGracom', 'AlunoGracomController');
 Route::resource('professor', 'ProfessorController');
 Route::resource('unidades', 'UnidadeController');
 Route::resource('chamados', 'ChamadoController');
@@ -33,4 +34,4 @@ Route::get('adicionar_usuario', 'UsuarioController@create');
 Route::get('adicionar_aluno', 'AlunoController@create');
 Route::get('busca', 'AlunoController@busca');
 Route::get('buscaProfessor', 'ProfessorController@busca');
-Route::get('adicionar_professor', 'ProfessorController@create');
+Route::get('adicionara_professor', 'ProfessorController@create');

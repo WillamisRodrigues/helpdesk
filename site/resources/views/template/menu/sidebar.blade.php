@@ -15,6 +15,26 @@
 			<li class="@yield('chamados')"><a href="/chamados"><em class="fa fa-phone" >&nbsp;</em> Solicitações</a></li>
 			<li class="@yield('professor')"><a href="/professor"><em class="fa fa-graduation-cap">&nbsp;</em> Professores</a></li>
 			<li class="@yield('aluno')"><a href="/aluno"><em class="fa fa-users">&nbsp;</em> Alunos</a></li>
+
+			<li class="parent @yield('alunoGracom') "><a data-toggle="collapse" href="#sub-item-2">
+					 Gracom <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
+					</a>
+					<ul class="children collapse" id="sub-item-2">
+						<li><a class="" href="/alunoGracom">
+							<span class="fa fa-users">&nbsp;</span> Usuários
+						</a></li>
+					</ul>
+				</li>
+
+			<li class="parent @yield('alunoImugi') "><a data-toggle="collapse" href="#sub-item-3">
+					Imugi <span data-toggle="collapse" href="#sub-item-3" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				   </a>
+				   <ul class="children collapse" id="sub-item-3">
+					   <li><a class="" href="/unidades">
+						   <span class="fa fa-users">&nbsp;</span> Usuários
+					   </a></li>
+				   </ul>
+			   </li>
 			<li class="parent @yield('configuracao') "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Configurações <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
