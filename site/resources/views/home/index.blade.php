@@ -63,15 +63,12 @@
 					<div class="panel-body">
 						<div class="canvas-wrapper">
 							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
-							<div style="width:75%;">
+							<div style="width:100%;">
 								{!! $chartjs->render() !!}
 							</div>
-						</div>
-					</div>
-					
+                        </div>
 				</div>
 			</div>
-<<<<<<< HEAD
 		</div><!--/.row-->
 			<div class="col-sm-12">
 				<p class="back-link"> Sistema Helpdesk 2019 </p>
@@ -81,15 +78,3 @@
 	@endsection
 
 
-=======
-		</div>
-		<!--/.row-->
-		<div class="col-sm-12">
-			<p class="back-link"> Sistema Helpdesk 2019 </p>
-		</div>
-	</div>
-	<!--/.row-->
-	</div>
-	<!--/.main-->
-	@endsection
->>>>>>> 5f532279965e764e996d49f2866ef1c807adc54b
