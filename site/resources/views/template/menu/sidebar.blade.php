@@ -21,7 +21,7 @@
 					</a>
 					<ul class="children collapse" id="sub-item-2">
 						<li><a class="" href="/alunoGracom">
-							<span class="fa fa-users">&nbsp;</span> Usuários
+							<span class="fa fa-users">&nbsp;</span> Alunos
 						</a></li>
 					</ul>
 				</li>
@@ -30,8 +30,8 @@
 					Imugi <span data-toggle="collapse" href="#sub-item-3" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				   </a>
 				   <ul class="children collapse" id="sub-item-3">
-					   <li><a class="" href="/unidades">
-						   <span class="fa fa-users">&nbsp;</span> Usuários
+					   <li><a class="" href="/alunoImugi">
+						   <span class="fa fa-users">&nbsp;</span> Alunos
 					   </a></li>
 				   </ul>
 			   </li>

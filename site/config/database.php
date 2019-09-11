@@ -81,6 +81,24 @@ return [
             ]) : [],
         ],
 
+        'another2' => [
+            'driver' => 'mysql',
+            'host' => env('DB_ANOTHER_HOST', '127.0.0.1'),
+            'port' => env('DB_ANOTHER_PORT', '3306'),
+            'database' => env('DB_ANOTHER_DATABASE2', 'forge'),
+            'username' => env('DB_ANOTHER_USERNAME2', 'forge'),
+            'password' => env('DB_ANOTHER_PASSWORD2', ''),
+            'unix_socket' => env('DB_ANOTHER_SOCKET2', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

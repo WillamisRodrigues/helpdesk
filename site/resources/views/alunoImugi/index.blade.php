@@ -1,6 +1,6 @@
 @extends('template.layout.app-admin')
 	@section('titulo','Alunos')
-	@section('aluno','active')
+	@section('alunoImugi','active')
     @section('conteudo')
     @include('template.layout.header')
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
@@ -17,9 +17,6 @@
 			</ol>
 		</div><!--/.row-->
 		<br>
-			<a href="/adicionar_aluno" class="btn btn-success pull-right">
-			<i class="fa fa-graduation-cap"></i>
-			Adicionar Alunos</a>
 			<div style="height:55px;"></div>
 			<div class="row">
 				<div class="col-md-12">
@@ -29,15 +26,15 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-graduation-cap"></i>
-						Alunos
+						Alunos Imugi
 						
-								<form action="/busca" method="get" class="form-inline pull-right">
+								<form action="/buscaImugi" method="get" class="form-inline pull-right">
 									<div class="form-group">
 										<input type="text" class="form-control" name="nome" placeholder="Nome" value="{{ isset($nome) ? $nome : '' }}">
 									</div>
 									<div class="form-group">
 										<button class="btn btn-success" type="submit" >Procurar</button>
-										<a class="btn btn-danger" href="{{route('aluno.index')}}">Limpar</a>
+										<a class="btn btn-danger" href="{{route('alunoImugi.index')}}">Limpar</a>
 									</div>
 								</form>
 							
@@ -48,10 +45,8 @@
 							<thead>
 								<tr>
 									<th>Matricula</th>
-									<th>Nome Usuário</th>
 									<th>Email</th>
-									<th>Nível</th>
-                                    <th>Status</th>
+									<th>Senha</th>
 									<th>Ação</th>
 								</tr>
 							</thead>
@@ -60,20 +55,9 @@
 							
 								<tr>
 								<td>{{$aluno->matricula}}</td>
-                                <td>{{$aluno->nome}}</td>
 								<td>{{$aluno->email}}</td>
-								@if($aluno->nivel == 0)
-									<td>Open Class</td>
-								@else
-									<td>Design Standard </td>
-                                @endif
-
-                                @if($aluno->status == 0)
-                                <td>Ativo</td>
-                                @else
-                                <td>Inativo</td>
-                                @endif
-								<td><a href="{{ route('aluno.edit',[$aluno->id_cliente]) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a></td>
+								<td>{{$aluno->senha}}</td>
+								<td><a href="{{ route('alunoImugi.edit',[$aluno->matricula]) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a></td>
                                 </tr>
                                 @endforeach
 							</tbody>

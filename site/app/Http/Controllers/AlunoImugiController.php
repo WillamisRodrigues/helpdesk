@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\AlunoGracom;
+use App\AlunoImugi;
 use App\Informacoes;
 use DB;
 use Illuminate\Http\Request;
 
-class AlunoGracomController extends Controller
+class AlunoImugiController extends Controller
 {
     
     public function __construct()
@@ -17,21 +17,21 @@ class AlunoGracomController extends Controller
 
     public function index(Request $request)
     {
-        $alunos = DB::connection('another')->table('alunos_cadastro')->paginate(10);
+        $alunos = DB::connection('another2')->table('alunos_cadastro')->paginate(10);
       
-        return view('alunoGracom.index',compact('alunos'));
+        return view('alunoImugi.index',compact('alunos'));
     }
 
     public function busca(Request $request)
     {
         $busca = $request->get('nome');
-        $alunos = DB::connection('another')->table('alunos_cadastro')->where([
+        $alunos = DB::connection('another2')->table('alunos_cadastro')->where([
             ['email','LIKE','%'.$busca.'%'],
             ['senha','LIKE','%'.$busca.'%']
             ])->orWhere('matricula', 'LIKE', '%'.$busca.'%')->paginate(10);
 
            
-                return view('alunoGracom.index', compact('alunos'));
+                return view('alunoImugi.index', compact('alunos'));
     }
 
     public function show(Aluno $aluno)
@@ -41,11 +41,11 @@ class AlunoGracomController extends Controller
 
     public function edit($matricula)
     {
-        $aluno = DB::connection('another')->table('alunos_cadastro')->where('matricula',$matricula)->first();
-        return view('alunoGracom.edit', compact('aluno', $aluno));
+        $aluno = DB::connection('another2')->table('alunos_cadastro')->where('matricula',$matricula)->first();
+        return view('alunoImugi.edit', compact('aluno', $aluno));
     }
 
-    public function update(Request $request, AlunoGracom $aluno)
+    public function update(Request $request, AlunoImugi $aluno)
     {
         $request->validate([
             'email'=>'required',
@@ -56,7 +56,7 @@ class AlunoGracomController extends Controller
         ->where('matricula',$request->get('matricula'))
         ->update(['email' => $request->get('email'),'senha' => $request->get('senha')]);
  
-        return redirect()->route('alunoGracom.index')
+        return redirect()->route('alunoImugi.index')
         ->with('info', 'Editado com Sucesso.');
     }
 

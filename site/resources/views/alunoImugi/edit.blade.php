@@ -1,6 +1,6 @@
 @extends('template.layout.app-admin')
 	@section('titulo','Editar Aluno')
-	@section('aluno','active')
+	@section('alunoImugi','active')
     @section('conteudo')
     @include('template.layout.header')
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
@@ -26,21 +26,15 @@
 					<div class="panel panel-default">
 						<div class="panel-heading clearfix">
 						<i class="fa fa-user"></i>
-						Editar Aluno</div>
+						Editar Aluno Imugi</div>
 						<div class="panel-body">
-							<form class="form-horizontal row-border" action="{{ route('aluno.update', $aluno->id_cliente) }}" method="POST">
+							<form class="form-horizontal row-border" action="{{ route('alunoImugi.update', $aluno->id_aluno) }}" method="POST">
                                 <input type="hidden" name="_method" value="PUT">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group">
 									<label class="col-md-2 control-label">Matricula:</label>
 									<div class="col-md-6">
-										<input type="text" value="{{ $aluno->matricula }}" maxlength="10" name="matricula" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">Nome Aluno:</label>
-									<div class="col-md-6">
-                                    <input type="text" value="{{ $aluno->nome }}" name="nome" class="form-control">
+										<input  readonly type="text" value="{{ $aluno->matricula }}" name="matricula" class="form-control">
 									</div>
 								</div>
                                 <div class="form-group">
@@ -53,24 +47,6 @@
 									<label class="col-md-2 control-label">Senha:</label>
 									<div class="col-md-6">
 										<input type="password" value="{{ $aluno->senha }}" name="senha" class="form-control">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">Nivel:</label>
-									<div class="col-md-6">
-										<select class="form-control" name="nivel">
-											<option value="0">Open Class [Free]</option>
-                                            <option value="3">Design Standard [Premium]</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">Status:</label>
-									<div class="col-md-6">
-										<select class="form-control" name="status">
-											<option value="0">Ativo</option>
-                                            <option value="1">Inativo</option>
-										</select>
 									</div>
 								</div>
 								<div class="form-group">
